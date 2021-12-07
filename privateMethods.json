@@ -478,6 +478,10 @@
              "type":"string",
              "required":false
           },
+          "lifetime":{
+             "type":"number",
+             "required":false
+          },
           "tp_r":{
              "type":"number",
              "required":false
@@ -1554,6 +1558,16 @@
         "params": {
             "lang": {
                "type": "string", 
+               "required": true
+            }
+        },
+        "authRequire": true
+    },
+    "orderinfo": {
+        "name": "json.orderinfo",
+        "params": {
+            "oid": {
+               "type": "number", 
                "required": true
             }
         },
