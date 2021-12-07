@@ -502,7 +502,9 @@ Creating a new account
 |password|String|`required`|password|
 |repassword|String|`required`|repeat password|
 Note: `The account will be created with given email as login`
+
 **Sample reply:**
+
 ```
 {"ok": true}
 ```
@@ -538,6 +540,7 @@ If 2FA was activated for the current account and a `key` parameter is missing or
 IF Wrong 2FA OTP was entered 3 times in a row for this account, you will get an ERROR `37040` in reply. A user will need to enter 3 different OTP generated one by one to log in. 2 additional fields (`key2` and `key3`) must be shown to the user in this case with required 6-digit password.
 
 ---
+
 ### 203. Email confirmation
 ```
 POST https://api.50x.cloud/json.confirm_email/
