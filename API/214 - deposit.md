@@ -29,13 +29,13 @@ Returns address details for depositing given `sym`.
 
 `sym` - internal trading symbol of an asset to be deposited
 
-`wallet` - Address with tag in QR-code compatible format 
+`wallet` - Address with tag in QR-code compatible format
 
 `msg_id` - Message code to be used with the translations file
 
 `html` - A default html-formatted message to be displayed in case of the translation failure
 
-`values` - An array with all variables for the translation 
+`values` - An array with all variables for the translation
 
 `values[0]` - Same as 'sym', internal trading symbol of an asset to be deposited
 
