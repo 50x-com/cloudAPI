@@ -23,7 +23,7 @@ Changes an open order
 |remove_sltp|String|false|Expected `sl` or `sltp`|
 |from_history|number|false|Must be `1` if changing an order with `state:3`|
 |close_as_filled|number|false|Makes order volume equal to filled_volume and closes the order as fully filled. Position will be created with SLTP was set in this order. Should come with `oid` only.|
-|set_fulfilled|number|Set order as fullfiled.|
+|set_fulfilled|number|false|Set order as fullfiled.|
 
 **Note:**
 
