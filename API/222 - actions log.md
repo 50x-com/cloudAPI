@@ -3,7 +3,7 @@
 Returns a list of user's autorised orders incliding log in and change account settings events.
 
 ```text
-https://api.50x.cloud/json.actionslog/
+POST https://api.50x.cloud/json.actionslog/
 ```
 
 **No parameters**

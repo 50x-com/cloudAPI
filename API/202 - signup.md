@@ -1,5 +1,6 @@
 # 201. Sign UP
 
+
 ```text
 POST https://api.50x.cloud/json.join/
 ```
