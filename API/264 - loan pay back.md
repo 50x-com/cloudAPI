@@ -14,3 +14,6 @@ POST https://api.50x.cloud/json.pay_back_loan
 ```json
 {"ok": true}
 ```
+
+**Expected Errors:**
+`10003`, `26400`, `37003`

@@ -15,3 +15,6 @@ POST https://api.50x.cloud/json.cancel_lending
 ```json
 {"ok": true}
 ```
+
+**Expected Errors:**
+`10003`, `26201`, `35001`, `35015`, `37003`
