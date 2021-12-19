@@ -1589,6 +1589,7 @@ https://api.50x.cloud/json.get_loan
 DELETE `28100`: There are not enough own funds on your account to get a new loan.[own_funds_percent,new_loan_level]
 DELETE `28101`: Post-loan marginal coverage is not enough to maintain the loan.[post_own_funds_percent,margincall_level]
 
+
 ---
 ###  * 264. Paying back the loan
 ```
