@@ -52,14 +52,14 @@ private: {
 
 |Type|Description|Interface|
 |---|:---|--------|
-|`oc`|Order changed - receive when changin order pamarm, open or close order|IOrder|
-|`tc`|Trade changed - receive when order was filled or partitial filled|IOrder|
+|`oc`|Order changed - receive when changing order param, open or close order|IOrder|
+|`tc`|Trade changed - receive when order was filled or partially filled|IOrder|
 |`bal`|Balance changed|IWSBalanceData|
 |`in`|Incoming transaction|IIncomingItem|
 |`wd`|Withdrawal transaction|IWithdrawItem|
-|`lending`|Lending order change|ILendingItem|
-|`loan`|Loan order change|ILoanItem|
-|`ml`|Change of margin level|IMarginData|
+|`lending`|Lending order changed|ILendingItem|
+|`loan`|Loan order changed|ILoanItem|
+|`ml`|Margin level changed|IMarginData|
 |`error`|Error message|IError|
 |`msgcode`|System notification|INotification|
 |`msg`|Message|IMessage|
