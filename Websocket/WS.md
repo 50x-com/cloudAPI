@@ -46,9 +46,23 @@ public: {
 },
 private: {
     type: "oc" | "tc" | "bal" | "in" | "wd" | "lending" | "loan" | "ml" | "error" | "msgcode" | "msg",
-    data: string // serialized => IOrder | IWSBalanceData | IIncomingItem | IWithdrawItem | ILendingItem | TLoanItem | MarginData | MessageData | IError
+    data: string // serialized => IOrder | IWSBalanceData | IIncomingItem | IWithdrawItem | ILendingItem | ILoanItem | IMarginData | IMessage | INotification |  IError
 }
 ```
+
+|Type|Description|Interface|
+|---|:---|--------|
+|`oc`|Order changed - receive when changin order pamarm, open or close order|IOrder|
+|`tc`|Trade changed - receive when order was filled or partitial filled|IOrder|
+|`bal`|Balance changed|IWSBalanceData|
+|`in`|Incoming transaction|IIncomingItem|
+|`wd`|Withdrawal transaction|IWithdrawItem|
+|`lending`|Lending order change|ILendingItem|
+|`loan`|Loan order change|ILoanItem|
+|`ml`|Change of margin level|IMarginData|
+|`error`|Error message|IError|
+|`msgcode`|System notification|INotification|
+|`msg`|Message|IMessage|
 
 ### Interfaces
 
@@ -61,7 +75,7 @@ type TmarketItem = {
 type MarketResponse =  {[key: string]: TmarketItem}
 type TradeInfo = {
     a:  0 | 1
-    bs:	's' | 'b'
+    bs: 's' | 'b'
     ts: number
     rate: number
     vol1: number
@@ -77,10 +91,10 @@ interface IOrderbookRequest{
     rate_med: number
 }
 interface IOrder {
-    bs: "s" | "b"​​​
-    commission: number​
-    copied_to: null​​​ | number
-    expire_time: number​​​
+    bs: "s" | "b"   
+    commission: number 
+    copied_to: null    | number
+    expire_time: number   
     filled_amount: number
     filled_vol: number
     infinity: number
@@ -103,18 +117,18 @@ interface IOrder {
     time_last_fill: number
     tp_r: null | number
     trailing_pr: null | number
-    ​​​type: "l" | "m"
+       type: "l" | "m"
     vol: number
     was_changed: number
 }
 interface IWSBalanceData {
     [key: string]: {
-        b: number,
-        a: number,
-        l: number,
-        o: number,
-        r: number,
-        w: number,
+        b: number, // Total balance
+        a: number, // Available
+        l: number, // Loans
+        o: number, // Own fund
+        r: number, // Reserved
+        w: number, // withdraw available
     }
 }
 interface IIncomingItem {
@@ -144,7 +158,7 @@ interface IWithdrawItem {
     to_addr: string
     to_tag: null | string
 }
-type ILendingItem = {
+interface ILendingItem {
     amount: number
     expire_time: number
     fee_received: number
@@ -156,7 +170,7 @@ type ILendingItem = {
     time_create: number
     unused_amount: number
 }
-type TLoanItem = {
+interface ILoanItem {
     amount: number
     fees: number
     last_changes: number
@@ -168,8 +182,8 @@ type TLoanItem = {
     symbol: string
     time_create: number
 }
-type MarginData = {ml: number, ll: number}
-type MessageData = {
+interface IMarginData {ml: number, ll: number}
+interface IMessage {
     message?: string
     text?: string
     title: string | 'telegramID'
@@ -179,6 +193,19 @@ interface IError {
     error_code?: number | string
     values?: TValues
 }
+interface INotification extends IError{
+    ok?: boolean
+    message_code?: number
+    msg_id?: number
+    id?: number
+    date?: number
+    dates?: Record<string, number>
+    img?: string
+    type?: TNoteType
+    textKey?: string
+    translations?: {[ket: string]: string}
+}
+
 type TValues = (string | number)[] | Record<string, string | number | boolean>
 ```
 
