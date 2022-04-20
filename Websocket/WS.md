@@ -28,6 +28,8 @@ WS address: `wss://stream.50x.com:443/stream`
 
 Params must be stringify before send to `WebSocket.send()`
 
+> ### No need to subscribe on private events. You receive them if send `sid` in subscribe
+
 ## Ping-poing
 
 Server is tracking is connecion alive. On each recieve `ping` message you need to send `pong`. Otherwise connection will be lost.
