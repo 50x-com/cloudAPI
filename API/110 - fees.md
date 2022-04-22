@@ -47,6 +47,5 @@ interface IFees {
     pma_deposit?: TFeeItem 
     pma_open?: TFeeItem 
     telebot_message?: TFeeItem 
-    new_deposit_address?: TFeeItem 
 }
 ```

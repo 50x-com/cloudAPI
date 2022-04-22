@@ -20,7 +20,6 @@ POST https://api.50x.cloud/json.currencies/
 |deposit_enabled|boolean|If `false` depositing is currently turned off for this asset |
 |descr|string|Description|
 |ico_enabled|boolean|If `true` this asset is currently in the ICO mode|
-|internal_transfer_fee|number|Fee for transfer between addresses inside exchange|
 |loan_security|boolean| ??? |
 |min_trade_vol|number|Minimal trading volume for sale in asset units|
 |multiplicator|number| ??? |
@@ -31,14 +30,15 @@ POST https://api.50x.cloud/json.currencies/
 |sym|string|Unique asset's ticker in the system|
 |tag_name|string|Tag name|
 |title|string|Name to be displayed|
-|trade_com|number|Trading commision in percent**|
+|trade_fee|number|Trading commision in percent**|
+|new_addr_fee|boolean|Comission for creation new address for coin|
+|wd_fee|number|Withdrawal fee in asset units|
+|internal_transfer_fee|number|Fee for transfer between addresses inside exchange|
 |trade_enabled|boolean|If `true` this asset is currently available for trading|
 |trust_level|number|Internal rank defining available internal operations with this asset|
 |txlink|string| ??? |
 |url|string|Official or most common source of description of an asset|
-|wd_com|number|Withdrawal fee in asset units|
 |withdraw_enabled|boolean||
-
 
 **\* Note:** If `show_tag`==true, additional `tag` field must be shown to the user with depositing address with special warning that `tag` is required to be used in transaction or tokens will be lost. Also, `tag` input must be presented in withdrawal dialog, but it is not required for withdrawal.
 
