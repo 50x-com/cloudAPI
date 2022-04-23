@@ -42,7 +42,7 @@ POST https://api.50x.cloud/json.currencies/
 
 **\* Note:** If `show_tag`==true, additional `tag` field must be shown to the user with depositing address with special warning that `tag` is required to be used in transaction or tokens will be lost. Also, `tag` input must be presented in withdrawal dialog, but it is not required for withdrawal.
 
-**\*\* Note:** In any trading pair trading commission is calculated as max(currencies.sym1.trade_com, currencies.sym2.trade_com);
+**\*\* Note:** In any trading pair trading commission is calculated as max(currencies.sym1.trade_fee, currencies.sym2.trade_fee);
 
 ### **Typescript**
 
@@ -72,12 +72,12 @@ export interface ICurrencie{
     sym: string
     tag_name: null | string
     title: string
-    trade_com: number
+    trade_fee: number
     trade_enabled: boolean
     trust_level: number
     txlink: string
     url: string
-    wd_com: number
+    wd_fee: number
     withdraw_enabled: boolean
 }
 ```
