@@ -5,12 +5,12 @@ GET https://rates.50x.com/rates/
 ```
 
 **Parameters:**
+
 |Name|Type|Mandatory|Description|
 |----|----|:-------:|-----------|
 |base|String|optional|ticker of the base coin|
 
-**Note:**
-`base` default value is "BTC"
+> Note: `base` default value is "BTC"
 
 **Sample reply:**
 
