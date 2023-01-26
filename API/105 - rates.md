@@ -8,8 +8,10 @@ GET https://rates.50x.com/rates/
 |Name|Type|Mandatory|Description|
 |----|----|:-------:|-----------|
 |base|String|optional|ticker of the base coin|
+
 **Note:**
 `base` default value is "BTC"
+
 **Sample reply:**
 
 ```Reqest
